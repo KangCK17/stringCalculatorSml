@@ -10,5 +10,6 @@ val can_handle_specified_delimiter = calculator "//;\n1;2" = 3
 val raise_exception_for_negatives = (calculator "-1" handle unallowed_negatives => 0) =0
 
 val any_length_delimiter = calculator "//;;\n1;;2" = 3
+val no_fake_delimiters = calculator "//;;\n1;;2" 
 
 
