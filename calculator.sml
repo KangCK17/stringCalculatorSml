@@ -11,7 +11,7 @@ fun int_from_string x =
                   else #","
   val list_separated = String.fields(fn x => x = separator) s
   val intlist = List.map (int_from_string) list_separated
-  val sum = List.foldl (fn (x,y) => y+x) 0 (List.map (int_from_string) list_separated)
+  val sum = List.foldl (fn (x,y) => y+x) 0 intlist
   val negatives = List.filter(fn x => x < 0) intlist
 in
   if List.length negatives > 0 then raise unallowed_negatives else sum
